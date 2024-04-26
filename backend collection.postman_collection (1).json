@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "b8c7f7eb-c337-4620-8f79-34432e4cd931",
+		"name": "backend collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27012684",
+		"_collection_link": "https://speeding-flare-763794.postman.co/workspace/yogesh~91e136d7-b2d9-4fa9-b121-aa61260323ca/collection/27012684-b8c7f7eb-c337-4620-8f79-34432e4cd931?action=share&source=collection_link&creator=27012684"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Persona",
+						"value": "ADMIN",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"Davi.jorge@gmail.com\",\n    \"password\":\"!D010101\",\n    \"role\":{\n        \"roleName\":\"ADMIN\"\n    },\n    \"phoneNumber\":\"7600259499\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/auth/api/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"auth",
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"Davi.jorge@gmail.com\",\n    \"password\":\"!D010101\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/api/signin",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"api",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5b2dlc2gxNzk5OUBnbWFpbC5jb20iLCJpYXQiOjE3MTM2ODE0NTMsImV4cCI6MTcxMzY4MjA1M30.VKmnJXLNt0NF2vT-Sbth-ECrQXM_f_JQDZXS8Jjl_nI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/user/v1/all",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"v1",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5b2dlc2gxNzk5OUBnbWFpbC5jb20iLCJpYXQiOjE3MTM2ODE2NzMsImV4cCI6MTcxMzY4MjI3M30.e-raJpgzN6RxljOpvZTXsKk1hc4x0RP8PmwfkHLF06A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/user/v1/get/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"v1",
+						"get",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5b2dlc2gxNzk5OUBnbWFpbC5jb20iLCJpYXQiOjE3MTM2ODA4NDQsImV4cCI6MTcxMzY4MTQ0NH0.ViU-UD6Dh1HeWr9mvEw1bA98EClCqKHLkSsoaA_HZqw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"yjj@gmail.com\",\n    \"phoneNumber\":\".1351262\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/user/v1/update/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"v1",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5b2dlc2gxNzk5OUBnbWFpbC5jb20iLCJpYXQiOjE3MTM2ODIxNzIsImV4cCI6MTcxMzY4Mjc3Mn0.tXx-xtDVfo4XO9-JN5JjLfuUfdB2SmSNCyT4hNynm7s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"yjj@gmail.com\",\n    \"phoneNumber\":\".1351262\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "/api/user/v1/delete/1",
+					"path": [
+						"api",
+						"user",
+						"v1",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://5fae-106-216-100-130.ngrok-free.app",
+			"type": "string"
+		}
+	]
+}
